@@ -1,0 +1,62 @@
+{
+  "en": {
+    "title": "Learning Chinese Character {{character}}",
+    "selectVoice": "Select Voice",
+    "commonUsages": "Common Usages",
+    "practice": "Practice",
+    "fillInBlank": "Fill in the blank",
+    "correct": "Correct! 着 is used here to show continuous action - 'standing and waiting'",
+    "tryAgain": "Try again! Think about continuous action",
+    "previous": "Previous",
+    "next": "Next",
+    "home": "Home",
+    "readAloud": "Read aloud",
+    "examples": {
+      "progressiveAction": {
+        "title": "Progressive Action",
+        "pinyin": "Tā zhèngzài kàn zhe shū.",
+        "meaning": "He is reading a book."
+      },
+      "continuousState": {
+        "title": "Continuous State",
+        "pinyin": "Mén kāi zhe.",
+        "meaning": "The door is open (remains open)."
+      },
+      "emphasis": {
+        "title": "Emphasis",
+        "pinyin": "zhuózhòng shuōmíng",
+        "meaning": "Emphasize; stress"
+      }
+    }
+  },
+  "ja": {
+    "title": "漢字「{{character}}」を学ぶ",
+    "selectVoice": "音声を選択",
+    "commonUsages": "一般的な使い方",
+    "practice": "練習",
+    "fillInBlank": "空欄を埋めてください",
+    "correct": "正解！着はここでは継続的な動作を表します",
+    "tryAgain": "もう一度！継続的な動作について考えてみましょう",
+    "previous": "前へ",
+    "next": "次へ",
+    "home": "ホーム",
+    "readAloud": "音読",
+    "examples": {
+      "progressiveAction": {
+        "title": "進行中の動作",
+        "pinyin": "Tā zhèngzài kàn zhe shū.",
+        "meaning": "彼は本を読んでいます"
+      },
+      "continuousState": {
+        "title": "継続状態",
+        "pinyin": "Mén kāi zhe.",
+        "meaning": "ドアが開いています（開いたままです）"
+      },
+      "emphasis": {
+        "title": "強調",
+        "pinyin": "zhuózhòng shuōmíng",
+        "meaning": "強調する、重点を置く"
+      }
+    }
+  }
+} 

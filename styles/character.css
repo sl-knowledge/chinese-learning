@@ -189,4 +189,25 @@ body {
 /* Make sure the button doesn't affect text layout */
 .chinese-text .speak-button {
     flex-shrink: 0;
+}
+
+/* Add styles for language selector */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.language-selector select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.language-selector select:hover {
+    border-color: #4a90e2;
 } 

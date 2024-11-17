@@ -8,6 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    <div class="language-selector">
+        <label for="translation-select">Translation Language:</label>
+        <select id="translation-select">
+            <option value="en">English</option>
+            <option value="ja">日本語</option>
+            <option value="ko">한국어</option>
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+        </select>
+    </div>
+
     <div class="character-section">
         <div class="big-char">着</div>
         <div class="pronunciation-box">
@@ -23,7 +35,7 @@
             </div>
         </div>
         <div class="voice-control">
-            <label for="voice-select">Select Voice:</label>
+            <label for="voice-select" data-i18n="selectVoice">Select Voice:</label>
             <select id="voice-select">
                 <option value="">Loading voices...</option>
             </select>
@@ -31,52 +43,52 @@
     </div>
 
     <div class="usage-section">
-        <h2>Common Usages</h2>
+        <h2 data-i18n="commonUsages">Common Usages</h2>
         
         <div class="usage-card" data-usage-id="1">
-            <h3>Progressive Action (正在)</h3>
+            <h3 data-i18n="examples.progressiveAction.title">Progressive Action (正在)</h3>
             <div class="example hidden">
                 <div class="chinese-text">
                     <span class="text">他正在看<b>着</b>书。</span>
                 </div>
                 <div class="translation hidden">
                     <span class="pinyin">Tā zhèngzài kàn zhe shū.</span><br>
-                    <span class="meaning">He is reading a book.</span>
+                    <span class="meaning" data-i18n="examples.progressiveAction.meaning">He is reading a book.</span>
                 </div>
             </div>
         </div>
 
         <div class="usage-card" data-usage-id="2">
-            <h3>Continuous State</h3>
+            <h3 data-i18n="examples.continuousState.title">Continuous State</h3>
             <div class="example hidden">
                 <div class="chinese-text">
                     门开<b>着</b>。
                 </div>
                 <div class="translation hidden">
                     <span class="pinyin">Mén kāi zhe.</span><br>
-                    <span class="meaning">The door is open (remains open).</span>
+                    <span class="meaning" data-i18n="examples.continuousState.meaning">The door is open (remains open).</span>
                 </div>
             </div>
         </div>
 
         <div class="usage-card" data-usage-id="3">
-            <h3>Emphasis (着重)</h3>
+            <h3 data-i18n="examples.emphasis.title">Emphasis (着重)</h3>
             <div class="example hidden">
                 <div class="chinese-text">
                     着重说明
                 </div>
                 <div class="translation hidden">
                     <span class="pinyin">zhuózhòng shuōmíng</span><br>
-                    <span class="meaning">Emphasize; stress</span>
+                    <span class="meaning" data-i18n="examples.emphasis.meaning">Emphasize; stress</span>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="practice-section">
-        <h2>Practice</h2>
+        <h2 data-i18n="practice">Practice</h2>
         <div id="quiz">
-            <p>Fill in the blank:</p>
+            <p data-i18n="fillInBlank">Fill in the blank:</p>
             <p>他站_____等人。</p>
             <button class="quiz-button" onclick="checkAnswer('着')">着</button>
             <button class="quiz-button" onclick="checkAnswer('了')">了</button>
@@ -88,7 +100,9 @@
     <script>
         // Initialize the CharacterLearning class
         document.addEventListener('DOMContentLoaded', () => {
-            new CharacterLearning();
+            const app = new CharacterLearning();
+            // Make sure to call setupLanguageSelector
+            app.setupLanguageSelector();
         });
 
         function checkAnswer(answer) {

@@ -1,29 +1,64 @@
-// Auto-refresh functionality for development
-function setupDevMode() {
-    if (window.location.hostname === 'localhost') {
-        const ws = new WebSocket('ws://localhost:8082');
-        
-        ws.onmessage = event => {
-            if (event.data === 'refresh') window.location.reload();
-        };
-
-        ws.onclose = () => setTimeout(setupDevMode, 1000);
-        ws.onerror = () => setTimeout(setupDevMode, 1000);
-    }
-}
-
-// Character learning functionality
 class CharacterLearning {
     constructor() {
-        this.setupEventListeners();
-        this.loadQuizData();
-        this.setupVoiceSelection();
+        this.uiLang = 'en';
+        this.translationLang = localStorage.getItem('translationLanguage') || 'en';
+        this.translations = {};
+        this.characterData = {};
+        
+        // Debug logs
+        console.log('Initializing CharacterLearning...');
+        console.log('Initial translation language:', this.translationLang);
+        
+        this.init();
+    }
+
+    async init() {
+        try {
+            await Promise.all([
+                this.loadTranslations(),
+                this.loadCharacterData()
+            ]);
+            
+            this.setupEventListeners();
+            this.setupVoiceSelection();
+            this.updatePageLanguage();
+            this.updatePageContent();
+            
+            console.log('Initialization complete');
+        } catch (error) {
+            console.error('Initialization error:', error);
+        }
+    }
+
+    async loadTranslations() {
+        try {
+            console.log('Loading translations...');
+            const response = await fetch('./data/i18n/translations.json');
+            this.translations = await response.json();
+            console.log('Translations loaded:', this.translations);
+        } catch (error) {
+            console.error('Error loading translations:', error);
+        }
+    }
+
+    async loadCharacterData() {
+        try {
+            console.log('Loading character data...');
+            const response = await fetch('./data/characters/zhe.json');
+            this.characterData = await response.json();
+            console.log('Character data loaded:', this.characterData);
+        } catch (error) {
+            console.error('Error loading character data:', error);
+        }
     }
 
     setupVoiceSelection() {
-        // Create and populate voice selector
+        console.log('Setting up voice selection...');
         const voiceSelect = document.getElementById('voice-select');
-        if (!voiceSelect) return;
+        if (!voiceSelect) {
+            console.error('Voice select element not found');
+            return;
+        }
 
         // Update voices when they are available
         speechSynthesis.addEventListener('voiceschanged', () => {
@@ -35,8 +70,8 @@ class CharacterLearning {
     }
 
     updateVoiceList(voiceSelect) {
-        // Get all available voices
         const voices = speechSynthesis.getVoices();
+        console.log('Available voices:', voices);
         
         // Clear existing options
         voiceSelect.innerHTML = '';
@@ -45,13 +80,14 @@ class CharacterLearning {
         const chineseVoices = voices.filter(voice => 
             voice.lang.includes('zh') || voice.lang.includes('cmn')
         ).sort((a, b) => {
-            // Put Microsoft voices first
             const aIsMicrosoft = a.name.toLowerCase().includes('microsoft');
             const bIsMicrosoft = b.name.toLowerCase().includes('microsoft');
             if (aIsMicrosoft && !bIsMicrosoft) return -1;
             if (!aIsMicrosoft && bIsMicrosoft) return 1;
             return a.name.localeCompare(b.name);
         });
+
+        console.log('Filtered Chinese voices:', chineseVoices);
 
         // Add voices to selector
         chineseVoices.forEach(voice => {
@@ -67,35 +103,19 @@ class CharacterLearning {
         });
     }
 
-    speakText(text) {
-        if (!text) {
-            console.log('No text to speak');
-            return;
+    setupLanguageSelector() {
+        console.log('Setting up language selector...');
+        const langSelect = document.getElementById('translation-select');
+        if (langSelect) {
+            langSelect.value = this.translationLang;
+            langSelect.addEventListener('change', (e) => {
+                this.translationLang = e.target.value;
+                localStorage.setItem('translationLanguage', this.translationLang);
+                this.updatePageLanguage();
+                this.updatePageContent();
+                console.log('Language changed to:', this.translationLang);
+            });
         }
-
-        console.log('Attempting to speak:', text);
-        const voiceSelect = document.getElementById('voice-select');
-        const voices = speechSynthesis.getVoices();
-        const selectedVoice = voices.find(voice => voice.name === voiceSelect.value);
-        
-        const utterance = new SpeechSynthesisUtterance(text);
-        
-        if (selectedVoice) {
-            utterance.voice = selectedVoice;
-            console.log('Using voice:', selectedVoice.name);
-        } else {
-            console.log('No voice selected, using default');
-        }
-        
-        utterance.rate = 0.8;
-        utterance.pitch = 1;
-        
-        // Add event listeners for debugging
-        utterance.onstart = () => console.log('Speech started');
-        utterance.onend = () => console.log('Speech ended');
-        utterance.onerror = (e) => console.log('Speech error:', e);
-        
-        speechSynthesis.speak(utterance);
     }
 
     setupEventListeners() {
@@ -106,98 +126,113 @@ class CharacterLearning {
                 const translation = card.querySelector('.translation');
                 
                 if (example.classList.contains('hidden')) {
-                    // First click: Show Chinese text
                     example.classList.remove('hidden');
                     example.classList.add('fade-in');
-                    // Make sure translation stays hidden
                     if (translation) translation.classList.add('hidden');
                 } else if (translation && translation.classList.contains('hidden')) {
-                    // Second click: Show translation
                     translation.classList.remove('hidden');
                     translation.classList.add('fade-in');
                 } else {
-                    // Third click: Hide everything
                     example.classList.add('hidden');
                     if (translation) translation.classList.add('hidden');
                 }
             });
         });
 
-        // Fix speech button functionality
+        // Add speak buttons
         document.querySelectorAll('.chinese-text').forEach(chineseText => {
-            // Remove existing button if any
-            const existingButton = chineseText.querySelector('.speak-button');
-            if (existingButton) {
-                existingButton.remove();
+            if (!chineseText.querySelector('.speak-button')) {
+                const speakButton = document.createElement('button');
+                speakButton.className = 'speak-button';
+                speakButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+                speakButton.title = 'Read aloud';
+                
+                speakButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const textContent = Array.from(chineseText.childNodes)
+                        .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'B')
+                        .map(node => node.textContent)
+                        .join('')
+                        .trim();
+                    
+                    console.log('Speaking:', textContent);
+                    this.speakText(textContent);
+                });
+
+                chineseText.appendChild(speakButton);
             }
-
-            // Add new button with better icon
-            const speakButton = document.createElement('button');
-            speakButton.className = 'speak-button';
-            speakButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Font Awesome icon
-            speakButton.title = 'Read aloud';
-            
-            // Improved event handler with better text extraction
-            speakButton.addEventListener('click', (e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                
-                // Get text content more reliably
-                const textContent = Array.from(chineseText.childNodes)
-                    .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'B' || node.nodeName === 'SPAN')
-                    .map(node => node.textContent)
-                    .join('')
-                    .trim();
-                
-                console.log('Speaking:', textContent); // Debug log
-                
-                // Cancel any ongoing speech
-                speechSynthesis.cancel();
-                
-                // Speak with slight delay
-                setTimeout(() => this.speakText(textContent), 100);
-            });
-
-            chineseText.appendChild(speakButton);
         });
     }
 
-    loadQuizData() {
-        const quizContainer = document.querySelector('.quiz');
-        if (!quizContainer) return;
-
-        const character = quizContainer.dataset.character;
-        fetch(`../data/quizzes/${character}.json`)
-            .then(response => response.json())
-            .then(data => this.renderQuiz(data))
-            .catch(err => console.log('Quiz data not available'));
-    }
-
-    renderQuiz(quizData) {
-        // Implement quiz rendering logic
-    }
-
-    checkAnswer(answer, correct) {
-        const result = document.getElementById('result');
-        result.classList.remove('hidden');
-        result.classList.add('fade-in');
-        
-        if (answer === correct) {
-            result.innerHTML = "Correct! " + this.getExplanation(correct);
-            result.style.color = 'green';
-        } else {
-            result.innerHTML = "Try again! Think about the usage.";
-            result.style.color = 'red';
+    speakText(text) {
+        if (!text) {
+            console.error('No text to speak');
+            return;
         }
+
+        console.log('Speaking text:', text);
+        const voiceSelect = document.getElementById('voice-select');
+        const voices = speechSynthesis.getVoices();
+        const selectedVoice = voices.find(voice => voice.name === voiceSelect.value);
+        
+        speechSynthesis.cancel(); // Cancel any ongoing speech
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        if (selectedVoice) {
+            utterance.voice = selectedVoice;
+            console.log('Using voice:', selectedVoice.name);
+        } else {
+            console.log('No voice selected, using default');
+        }
+        
+        utterance.rate = 0.8;
+        utterance.pitch = 1;
+        
+        speechSynthesis.speak(utterance);
     }
 
-    getExplanation(answer) {
-        // Implement explanation logic
+    updatePageLanguage() {
+        console.log('Updating page language...');
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const translation = this.translations[this.translationLang]?.[key] || 
+                              this.translations['en'][key] || 
+                              key;
+            element.textContent = translation;
+        });
     }
-}
 
-// Initialize
-document.addEventListener('DOMContentLoaded', () => {
-    setupDevMode();
-    new CharacterLearning();
-}); 
+    updatePageContent() {
+        console.log('Updating page content with character data...');
+        if (!this.characterData) {
+            console.error('No character data available');
+            return;
+        }
+
+        // Update pronunciation note
+        const pronNote = document.querySelector('.pronunciation-note small');
+        if (pronNote && this.characterData.pronunciation_note) {
+            pronNote.textContent = this.characterData.pronunciation_note[this.translationLang] ||
+                                 this.characterData.pronunciation_note.en;
+        }
+
+        // Update usages
+        this.characterData.usages.forEach((usage, index) => {
+            const card = document.querySelector(`[data-usage-id="${index + 1}"]`);
+            if (card) {
+                const title = card.querySelector('h3');
+                const meaning = card.querySelector('.meaning');
+                
+                if (title && usage.title) {
+                    const translatedTitle = usage.title[this.translationLang] || usage.title.en;
+                    title.textContent = `${translatedTitle} ${usage.chinese_title ? `(${usage.chinese_title})` : ''}`;
+                }
+                
+                if (meaning && usage.meaning) {
+                    const translatedMeaning = usage.meaning[this.translationLang] || usage.meaning.en;
+                    meaning.textContent = translatedMeaning;
+                }
+            }
+        });
+    }
+} 

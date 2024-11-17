@@ -12,22 +12,63 @@
             "usage": "compounds"
         }
     ],
-    "pronunciation_note": "zhe (neutral tone) is most common, zháo is used in specific compounds",
+    "pronunciation_note": {
+        "en": "zhe (neutral tone) is most common, zháo is used in specific compounds",
+        "ja": "zhe（軽声）が一般的で、zháo は特定の複合語で使用されます"
+    },
     "usages": [
         {
-            "title": "Progressive Action",
+            "title": {
+                "en": "Progressive Action",
+                "ja": "進行中の動作"
+            },
             "chinese_title": "正在",
             "chinese": "他正在看着书。",
             "pinyin": "Tā zhèngzài kàn zhe shū.",
-            "meaning": "He is reading a book."
+            "meaning": {
+                "en": "He is reading a book.",
+                "ja": "彼は本を読んでいます"
+            }
         },
         {
-            "title": "Continuous State",
+            "title": {
+                "en": "Continuous State",
+                "ja": "継続状態"
+            },
             "chinese": "门开着。",
             "pinyin": "Mén kāi zhe.",
-            "meaning": "The door is open (remains open)."
+            "meaning": {
+                "en": "The door is open (remains open).",
+                "ja": "ドアが開いています（開いたままです）"
+            }
+        },
+        {
+            "title": {
+                "en": "Emphasis",
+                "ja": "強調"
+            },
+            "chinese_title": "着重",
+            "chinese": "着重说明",
+            "pinyin": "zhuózhòng shuōmíng",
+            "meaning": {
+                "en": "Emphasize; stress",
+                "ja": "強調する、重点を置く"
+            }
         }
     ],
+    "quiz": {
+        "question": {
+            "en": "Fill in the blank:",
+            "ja": "空欄を埋めてください："
+        },
+        "sentence": "他站_____等人。",
+        "options": ["着", "了", "过"],
+        "correct": "着",
+        "explanation": {
+            "en": "Correct! 着 is used here to show continuous action - 'standing and waiting'",
+            "ja": "正解！着はここでは継続的な動作を表します - '立って待っている'"
+        }
+    },
     "next_char": "了",
     "prev_char": "的"
 } 
