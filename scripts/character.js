@@ -216,6 +216,23 @@ class CharacterLearning {
                                  this.characterData.pronunciation_note.en;
         }
 
+        // Update quiz section
+        const quizTitle = document.querySelector('.practice-section h2');
+        const quizInstruction = document.querySelector('#quiz p:first-child');
+        if (quizTitle && quizInstruction) {
+            quizTitle.textContent = this.translations[this.translationLang]?.practice || 
+                                   this.translations.en.practice;
+            quizInstruction.textContent = this.translations[this.translationLang]?.fillInBlank || 
+                                        this.translations.en.fillInBlank;
+        }
+
+        // Clear any existing quiz result when language changes
+        const result = document.getElementById('result');
+        if (result) {
+            result.classList.add('hidden');
+            result.textContent = '';
+        }
+
         // Update usages
         this.characterData.usages.forEach((usage, index) => {
             const card = document.querySelector(`[data-usage-id="${index + 1}"]`);
@@ -234,5 +251,33 @@ class CharacterLearning {
                 }
             }
         });
+
+        // Update section titles
+        const usagesTitle = document.querySelector('.usage-section h2');
+        if (usagesTitle) {
+            usagesTitle.textContent = this.translations[this.translationLang]?.commonUsages || 
+                                    this.translations.en.commonUsages;
+        }
+    }
+
+    checkAnswer(answer) {
+        console.log('Checking answer with language:', this.translationLang);
+        const result = document.getElementById('result');
+        result.classList.remove('hidden');
+        
+        const quiz = this.characterData.quiz;
+        if (answer === quiz.correct) {
+            // 确保使用当前选择的语言
+            const explanation = quiz.explanation[this.translationLang] || quiz.explanation.en;
+            console.log('Using explanation for language:', this.translationLang);
+            result.innerHTML = explanation;
+            result.style.color = 'green';
+        } else {
+            // 确保使用当前选择的语言
+            const tryAgainMsg = this.translations[this.translationLang]?.tryAgain || 
+                              this.translations.en.tryAgain;
+            result.innerHTML = tryAgainMsg;
+            result.style.color = 'red';
+        }
     }
 } 

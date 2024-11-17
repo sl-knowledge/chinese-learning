@@ -1,62 +1,167 @@
 {
   "en": {
-    "title": "Learning Chinese Character {{character}}",
     "selectVoice": "Select Voice",
     "commonUsages": "Common Usages",
     "practice": "Practice",
     "fillInBlank": "Fill in the blank",
-    "correct": "Correct! 着 is used here to show continuous action - 'standing and waiting'",
     "tryAgain": "Try again! Think about continuous action",
     "previous": "Previous",
     "next": "Next",
     "home": "Home",
-    "readAloud": "Read aloud",
-    "examples": {
-      "progressiveAction": {
-        "title": "Progressive Action",
-        "pinyin": "Tā zhèngzài kàn zhe shū.",
-        "meaning": "He is reading a book."
-      },
-      "continuousState": {
-        "title": "Continuous State",
-        "pinyin": "Mén kāi zhe.",
-        "meaning": "The door is open (remains open)."
-      },
-      "emphasis": {
-        "title": "Emphasis",
-        "pinyin": "zhuózhòng shuōmíng",
-        "meaning": "Emphasize; stress"
-      }
-    }
+    "readAloud": "Read aloud"
   },
   "ja": {
-    "title": "漢字「{{character}}」を学ぶ",
     "selectVoice": "音声を選択",
     "commonUsages": "一般的な使い方",
     "practice": "練習",
     "fillInBlank": "空欄を埋めてください",
-    "correct": "正解！着はここでは継続的な動作を表します",
     "tryAgain": "もう一度！継続的な動作について考えてみましょう",
     "previous": "前へ",
     "next": "次へ",
     "home": "ホーム",
-    "readAloud": "音読",
-    "examples": {
-      "progressiveAction": {
-        "title": "進行中の動作",
-        "pinyin": "Tā zhèngzài kàn zhe shū.",
-        "meaning": "彼は本を読んでいます"
-      },
-      "continuousState": {
-        "title": "継続状態",
-        "pinyin": "Mén kāi zhe.",
-        "meaning": "ドアが開いています（開いたままです）"
-      },
-      "emphasis": {
-        "title": "強調",
-        "pinyin": "zhuózhòng shuōmíng",
-        "meaning": "強調する、重点を置く"
-      }
-    }
+    "readAloud": "音読"
+  },
+  "it": {
+    "selectVoice": "Seleziona Voce",
+    "commonUsages": "Usi Comuni",
+    "practice": "Pratica",
+    "fillInBlank": "Riempi lo spazio vuoto",
+    "tryAgain": "Riprova! Pensa all'azione continua",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "home": "Home",
+    "readAloud": "Leggi ad alta voce"
+  },
+  "th": {
+    "selectVoice": "เลือกเสียง",
+    "commonUsages": "การใช้งานทั่วไป",
+    "practice": "ฝึกฝน",
+    "fillInBlank": "เติมคำในช่องว่าง",
+    "tryAgain": "ลองอีกครั้ง! คิดถึงการกระทำต่อเนื่อง",
+    "previous": "ก่อนหน้า",
+    "next": "ถัดไป",
+    "home": "หน้าแรก",
+    "readAloud": "อ่านออกเสียง"
+  },
+  "pt": {
+    "selectVoice": "Selecionar Voz",
+    "commonUsages": "Usos Comuns",
+    "practice": "Prática",
+    "fillInBlank": "Preencha o espaço",
+    "tryAgain": "Tente novamente! Pense na ação contínua",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "home": "Início",
+    "readAloud": "Ler em voz alta"
+  },
+  "ru": {
+    "selectVoice": "Выбрать голос",
+    "commonUsages": "Общие употребления",
+    "practice": "Практика",
+    "fillInBlank": "Заполните пропуск",
+    "tryAgain": "Попробуйте снова! Подумайте о продолжающемся действии",
+    "previous": "Предыдущий",
+    "next": "Следующий",
+    "home": "Главная",
+    "readAloud": "Прочитать вслух"
+  },
+  "vi": {
+    "selectVoice": "Chọn giọng đọc",
+    "commonUsages": "Cách dùng phổ biến",
+    "practice": "Luyện tập",
+    "fillInBlank": "Điền vào chỗ trống",
+    "tryAgain": "Thử lại! Hãy nghĩ về hành động đang diễn ra",
+    "previous": "Trước",
+    "next": "Tiếp",
+    "home": "Trang chủ",
+    "readAloud": "Đọc to"
+  },
+  "id": {
+    "selectVoice": "Pilih Suara",
+    "commonUsages": "Penggunaan Umum",
+    "practice": "Latihan",
+    "fillInBlank": "Isi yang kosong",
+    "tryAgain": "Coba lagi! Pikirkan tentang tindakan berkelanjutan",
+    "previous": "Sebelumnya",
+    "next": "Berikutnya",
+    "home": "Beranda",
+    "readAloud": "Baca keras"
+  },
+  "sw": {
+    "selectVoice": "Chagua Sauti",
+    "commonUsages": "Matumizi ya Kawaida",
+    "practice": "Mazoezi",
+    "fillInBlank": "Jaza pengo",
+    "tryAgain": "Jaribu tena! Fikiria kuhusu kitendo kinachoendelea",
+    "previous": "Iliyotangulia",
+    "next": "Inayofuata",
+    "home": "Nyumbani",
+    "readAloud": "Soma kwa sauti"
+  },
+  "fa": {
+    "selectVoice": "انتخاب صدا",
+    "commonUsages": "کاربردهای رایج",
+    "practice": "تمرین",
+    "fillInBlank": "جای خ��لی را پر کنید",
+    "tryAgain": "دوباره تلاش کنید! به عمل مداوم فکر کنید",
+    "previous": "قبلی",
+    "next": "بعدی",
+    "home": "خانه",
+    "readAloud": "با صدای بلند بخوانید"
+  },
+  "ar": {
+    "selectVoice": "اختيار الصوت",
+    "commonUsages": "الاستخدامات الشائعة",
+    "practice": "تدريب",
+    "fillInBlank": "املأ الفراغ",
+    "tryAgain": "حاول مرة أخرى! فكر في الفعل المستمر",
+    "previous": "السابق",
+    "next": "التالي",
+    "home": "الرئيسية",
+    "readAloud": "قراءة بصوت عالٍ"
+  },
+  "es": {
+    "selectVoice": "Seleccionar Voz",
+    "commonUsages": "Usos Comunes",
+    "practice": "Práctica",
+    "fillInBlank": "Rellena el espacio",
+    "tryAgain": "¡Inténtalo de nuevo! Piensa en la acción continua",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "home": "Inicio",
+    "readAloud": "Leer en voz alta"
+  },
+  "fr": {
+    "selectVoice": "Sélectionner la Voix",
+    "commonUsages": "Usages Courants",
+    "practice": "Pratique",
+    "fillInBlank": "Remplissez le vide",
+    "tryAgain": "Essayez encore ! Pensez à l'action continue",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "home": "Accueil",
+    "readAloud": "Lire à haute voix"
+  },
+  "ko": {
+    "selectVoice": "음성 선택",
+    "commonUsages": "일반적인 용법",
+    "practice": "연습",
+    "fillInBlank": "빈칸 채우기",
+    "tryAgain": "다시 시도하세요! 지속적인 동작에 대해 생각해보세요",
+    "previous": "이전",
+    "next": "다음",
+    "home": "홈",
+    "readAloud": "소리내어 읽기"
+  },
+  "de": {
+    "selectVoice": "Stimme auswählen",
+    "commonUsages": "Häufige Verwendungen",
+    "practice": "Übung",
+    "fillInBlank": "Lücke ausfüllen",
+    "tryAgain": "Versuchen Sie es nochmal! Denken Sie an die fortlaufende Handlung",
+    "previous": "Vorherige",
+    "next": "Nächste",
+    "home": "Start",
+    "readAloud": "Vorlesen"
   }
 } 

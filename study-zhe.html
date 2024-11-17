@@ -12,6 +12,15 @@
         <label for="translation-select">Translation Language:</label>
         <select id="translation-select">
             <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="th">ไทย</option>
+            <option value="pt">Português</option>
+            <option value="ru">Русский</option>
+            <option value="vi">Tiếng Việt</option>
+            <option value="id">Bahasa Indonesia</option>
+            <option value="sw">Kiswahili</option>
+            <option value="fa">فارسی</option>
+            <option value="ar">العربية</option>
             <option value="ja">日本語</option>
             <option value="ko">한국어</option>
             <option value="es">Español</option>
@@ -99,21 +108,18 @@
 
     <script>
         // Initialize the CharacterLearning class
+        let app;
         document.addEventListener('DOMContentLoaded', () => {
-            const app = new CharacterLearning();
-            // Make sure to call setupLanguageSelector
+            app = new CharacterLearning();
             app.setupLanguageSelector();
         });
 
         function checkAnswer(answer) {
-            const result = document.getElementById('result');
-            result.classList.remove('hidden');
-            if(answer === '着') {
-                result.innerHTML = "Correct! 着 is used here to show continuous action - 'standing and waiting'";
-                result.style.color = 'green';
+            // Use the app instance to access translations and character data
+            if (app) {
+                app.checkAnswer(answer);
             } else {
-                result.innerHTML = "Try again! Think about continuous action.";
-                result.style.color = 'red';
+                console.error('App not initialized');
             }
         }
     </script>
