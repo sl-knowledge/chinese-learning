@@ -149,14 +149,14 @@ class CharacterLearning {
                 
                 speakButton.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    const textContent = Array.from(chineseText.childNodes)
-                        .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'B')
-                        .map(node => node.textContent)
-                        .join('')
-                        .trim();
                     
-                    console.log('Speaking:', textContent);
-                    this.speakText(textContent);
+                    // Simplified text extraction
+                    const textContent = chineseText.textContent.replace(/\s+/g, '');
+                    console.log('Extracted text to speak:', textContent);
+                    
+                    if (textContent) {
+                        this.speakText(textContent);
+                    }
                 });
 
                 chineseText.appendChild(speakButton);

@@ -4,17 +4,17 @@
         {
             "pinyin": "zhe",
             "tone": 5,
-            "usage": "auxiliary"
+            "usage": "auxiliary - continuous action/state"
         },
         {
             "pinyin": "zháo",
             "tone": 2,
-            "usage": "compounds"
+            "usage": "in compounds like 着重(zhuózhòng)"
         }
     ],
     "pronunciation_note": {
-        "en": "zhe (neutral tone) is most common, zháo is used in specific compounds",
-        "ja": "zhe（軽声）が一般的で、zháo は特定の複合語で使用されます"
+        "en": "zhe (neutral tone) marks continuous actions/states, zháo is used in compounds like 着重",
+        "ja": "zhe（軽声）は継続的な動作・状態を表し、zháo は 着重(zhuózhòng) などの複合語で使用"
     },
     "usages": [
         {
@@ -38,21 +38,21 @@
             "chinese": "门开着。",
             "pinyin": "Mén kāi zhe.",
             "meaning": {
-                "en": "The door is open (remains open).",
-                "ja": "ドアが開いています（開いたままです）"
+                "en": "The door is open (and remains open).",
+                "ja": "ドアが開いています（開いたままの状態）"
             }
         },
         {
             "title": {
-                "en": "Emphasis",
-                "ja": "強調"
+                "en": "In Compounds",
+                "ja": "複合語"
             },
-            "chinese_title": "着重",
+            "chinese_title": "着重 (zhuózhòng)",
             "chinese": "着重说明",
             "pinyin": "zhuózhòng shuōmíng",
             "meaning": {
-                "en": "Emphasize; stress",
-                "ja": "強調する、重点を置く"
+                "en": "Emphasize; stress (note: here 着 is pronounced zháo)",
+                "ja": "強調する、重点を置く（注：ここでは着は zháo と発音）"
             }
         }
     ],

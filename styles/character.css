@@ -144,37 +144,39 @@ body {
 }
 
 .speak-button {
-    background: none;
+    background: #f0f0f0;
     border: none;
     cursor: pointer;
-    padding: 4px;
-    margin-left: 8px;
+    padding: 8px;
+    margin-left: 12px;
     vertical-align: middle;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    background-color: #f8f9fa;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    width: 32px;
+    height: 32px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     color: #666;
+    opacity: 0.85;
 }
 
 .speak-button:hover {
-    transform: scale(1.1);
-    background-color: #e9ecef;
-    color: #4a90e2;
+    transform: scale(1.05);
+    background-color: #e8e8e8;
+    opacity: 1;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
 .speak-button:active {
     transform: scale(0.95);
-    background-color: #dee2e6;
+    background-color: #e0e0e0;
 }
 
 .speak-button i {
-    font-size: 14px;
+    font-size: 16px;
+    color: #444;
 }
 
 .chinese-text {
@@ -182,8 +184,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 8px;
     margin-bottom: 10px;
+    line-height: 1.5;
 }
 
 /* Make sure the button doesn't affect text layout */
