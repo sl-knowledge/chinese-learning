@@ -68,19 +68,32 @@ class CharacterLearning {
     }
 
     speakText(text) {
-        console.log('Attempting to speak:', text); // Debug log
+        if (!text) {
+            console.log('No text to speak');
+            return;
+        }
+
+        console.log('Attempting to speak:', text);
         const voiceSelect = document.getElementById('voice-select');
         const voices = speechSynthesis.getVoices();
         const selectedVoice = voices.find(voice => voice.name === voiceSelect.value);
         
         const utterance = new SpeechSynthesisUtterance(text);
+        
         if (selectedVoice) {
             utterance.voice = selectedVoice;
+            console.log('Using voice:', selectedVoice.name);
         } else {
-            console.log('No voice selected, using default'); // Debug log
+            console.log('No voice selected, using default');
         }
+        
         utterance.rate = 0.8;
         utterance.pitch = 1;
+        
+        // Add event listeners for debugging
+        utterance.onstart = () => console.log('Speech started');
+        utterance.onend = () => console.log('Speech ended');
+        utterance.onerror = (e) => console.log('Speech error:', e);
         
         speechSynthesis.speak(utterance);
     }
@@ -118,21 +131,31 @@ class CharacterLearning {
                 existingButton.remove();
             }
 
-            // Add new button
+            // Add new button with better icon
             const speakButton = document.createElement('button');
             speakButton.className = 'speak-button';
-            speakButton.innerHTML = '🔊';
+            speakButton.innerHTML = '<i class="fas fa-volume-up"></i>'; // Font Awesome icon
             speakButton.title = 'Read aloud';
             
-            // Improved event handler
+            // Improved event handler with better text extraction
             speakButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 e.preventDefault();
                 
-                // Get only the Chinese text without the button text
-                const textToSpeak = chineseText.firstChild.textContent.trim();
-                console.log('Speaking:', textToSpeak); // Debug log
-                this.speakText(textToSpeak);
+                // Get text content more reliably
+                const textContent = Array.from(chineseText.childNodes)
+                    .filter(node => node.nodeType === Node.TEXT_NODE || node.nodeName === 'B' || node.nodeName === 'SPAN')
+                    .map(node => node.textContent)
+                    .join('')
+                    .trim();
+                
+                console.log('Speaking:', textContent); // Debug log
+                
+                // Cancel any ongoing speech
+                speechSynthesis.cancel();
+                
+                // Speak with slight delay
+                setTimeout(() => this.speakText(textContent), 100);
             });
 
             chineseText.appendChild(speakButton);
