@@ -1,0 +1,33 @@
+{
+    "character": "着",
+    "pronunciations": [
+        {
+            "pinyin": "zhe",
+            "tone": 5,
+            "usage": "auxiliary"
+        },
+        {
+            "pinyin": "zháo",
+            "tone": 2,
+            "usage": "compounds"
+        }
+    ],
+    "pronunciation_note": "zhe (neutral tone) is most common, zháo is used in specific compounds",
+    "usages": [
+        {
+            "title": "Progressive Action",
+            "chinese_title": "正在",
+            "chinese": "他正在看着书。",
+            "pinyin": "Tā zhèngzài kàn zhe shū.",
+            "meaning": "He is reading a book."
+        },
+        {
+            "title": "Continuous State",
+            "chinese": "门开着。",
+            "pinyin": "Mén kāi zhe.",
+            "meaning": "The door is open (remains open)."
+        }
+    ],
+    "next_char": "了",
+    "prev_char": "的"
+} 

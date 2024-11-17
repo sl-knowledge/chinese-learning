@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学习"着"字 - Learning Chinese Character 着</title>
+    <link rel="stylesheet" href="styles/character.css">
+    <script src="scripts/character.js"></script>
+</head>
+<body>
+    <div class="character-section">
+        <div class="big-char">着</div>
+        <div class="pronunciation-box">
+            <div class="pinyin">
+                <div class="pronunciation">
+                    <span>zhe</span><span class="tone-number">(5)</span>
+                    <span class="separator">•</span>
+                    <span>zháo</span><span class="tone-number">(2)</span>
+                </div>
+            </div>
+            <div class="pronunciation-note">
+                <small>Note: zhe (neutral tone) is most common, zháo is used in specific compounds</small>
+            </div>
+        </div>
+        <div class="voice-control">
+            <label for="voice-select">Select Voice:</label>
+            <select id="voice-select">
+                <option value="">Loading voices...</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="usage-section">
+        <h2>Common Usages</h2>
+        
+        <div class="usage-card" data-usage-id="1">
+            <h3>Progressive Action (正在)</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    <span class="text">他正在看<b>着</b>书。</span>
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">Tā zhèngzài kàn zhe shū.</span><br>
+                    <span class="meaning">He is reading a book.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-card" data-usage-id="2">
+            <h3>Continuous State</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    门开<b>着</b>。
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">Mén kāi zhe.</span><br>
+                    <span class="meaning">The door is open (remains open).</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-card" data-usage-id="3">
+            <h3>Emphasis (着重)</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    着重说明
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">zhuózhòng shuōmíng</span><br>
+                    <span class="meaning">Emphasize; stress</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="practice-section">
+        <h2>Practice</h2>
+        <div id="quiz">
+            <p>Fill in the blank:</p>
+            <p>他站_____等人。</p>
+            <button class="quiz-button" onclick="checkAnswer('着')">着</button>
+            <button class="quiz-button" onclick="checkAnswer('了')">了</button>
+            <button class="quiz-button" onclick="checkAnswer('过')">过</button>
+            <p id="result" class="hidden"></p>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the CharacterLearning class
+        document.addEventListener('DOMContentLoaded', () => {
+            new CharacterLearning();
+        });
+
+        function checkAnswer(answer) {
+            const result = document.getElementById('result');
+            result.classList.remove('hidden');
+            if(answer === '着') {
+                result.innerHTML = "Correct! 着 is used here to show continuous action - 'standing and waiting'";
+                result.style.color = 'green';
+            } else {
+                result.innerHTML = "Try again! Think about continuous action.";
+                result.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html> 

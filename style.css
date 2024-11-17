@@ -1,0 +1,46 @@
+body {
+    font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-char {
+    font-size: 120px;
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+}
+
+.pinyin {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 24px;
+}
+
+.pattern-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pattern-card:hover {
+    background-color: #f8f9fa;
+}
+
+.hidden {
+    display: none;
+}
