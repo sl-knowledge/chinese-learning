@@ -271,4 +271,10 @@ option[value="fa"],
 option[value="ur"] {
     direction: rtl;
     text-align: right;
+}
+
+/* Add RTL support */
+.rtl-option {
+    direction: rtl;
+    text-align: right;
 } 

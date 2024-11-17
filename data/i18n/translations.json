@@ -218,5 +218,93 @@
     "next": "Seterusnya",
     "home": "Laman Utama",
     "readAloud": "Baca Dengan Kuat"
+  },
+  "mn": {
+    "selectVoice": "Дуу сонгох",
+    "commonUsages": "Түгээмэл хэрэглээ",
+    "practice": "Дасгал",
+    "fillInBlank": "Хоосон зайг бөглөнө үү",
+    "tryAgain": "Дахин оролдоно уу! Үргэлжилсэн үйлдлийн тухай бодоорой",
+    "previous": "Өмнөх",
+    "next": "Дараах",
+    "home": "Нүүр",
+    "readAloud": "Чанга уншиx"
+  },
+  "lo": {
+    "selectVoice": "ເລືອກສຽງ",
+    "commonUsages": "ການໃຊ້ທົ່ວໄປ",
+    "practice": "ຝຶກຫັດ",
+    "fillInBlank": "ຕື່ມຊ່ອງຫວ່າງ",
+    "tryAgain": "ລອງອີກຄັ້ງ! ຄິດກ່ຽວກັບການກະທຳຕໍ່ເນື່ອງ",
+    "previous": "ກ່ອນໜ້າ",
+    "next": "ຕໍ່ໄປ",
+    "home": "ໜ້າຫຼັກ",
+    "readAloud": "ອ່ານອອກສຽງ"
+  },
+  "km": {
+    "selectVoice": "ជ្រើសរើសសំឡេង",
+    "commonUsages": "ការប្រើប្រាស់ទូទៅ",
+    "practice": "អនុវត្ត",
+    "fillInBlank": "បំពេញចន្លោះ",
+    "tryAgain": "សាកល្បងម្តងទៀត! គិតអំពីសកម្មភាពបន្ត",
+    "previous": "មុន",
+    "next": "បន្ទាប់",
+    "home": "ទំព័រដើម",
+    "readAloud": "អានឮៗ"
+  },
+  "my": {
+    "selectVoice": "အသံရွေးပါ",
+    "commonUsages": "အသုံးများသောအသုံးပြုမှုများ",
+    "practice": "လေ့ကျင့်ခန်း",
+    "fillInBlank": "ကွက်လပ်ဖြည့်ပါ",
+    "tryAgain": "ထပ်ကြိုးစားပါ! ဆက်တိုက်လုပ်ဆောင်မှုအကြောင်း စဉ်းစားပါ",
+    "previous": "ရှေ့",
+    "next": "နောက်",
+    "home": "ပင်မ",
+    "readAloud": "အသံထွက်ဖတ်ပါ"
+  },
+  "kk": {
+    "selectVoice": "Дауысты таңдау",
+    "commonUsages": "Жалпы қолданыс",
+    "practice": "Жаттығу",
+    "fillInBlank": "Бос орынды толтырыңыз",
+    "tryAgain": "Қайталап көріңіз! Үздіксіз әрекет туралы ойланыңыз",
+    "previous": "Алдыңғы",
+    "next": "Келесі",
+    "home": "Басты бет",
+    "readAloud": "Дауыстап оқу"
+  },
+  "uz": {
+    "selectVoice": "Ovozni tanlang",
+    "commonUsages": "Umumiy foydalanish",
+    "practice": "Mashq",
+    "fillInBlank": "Bo'sh joyni to'ldiring",
+    "tryAgain": "Qayta urinib ko'ring! Davomiy harakat haqida o'ylang",
+    "previous": "Oldingi",
+    "next": "Keyingi",
+    "home": "Bosh sahifa",
+    "readAloud": "Ovoz chiqarib o'qish"
+  },
+  "ta": {
+    "selectVoice": "குரலைத் தேர்வுசெய்க",
+    "commonUsages": "பொதுவான பயன்பாடுகள்",
+    "practice": "பயிற்சி",
+    "fillInBlank": "காலி இடத்தை நிரப்புக",
+    "tryAgain": "மீண்டும் முயற்சிக்கவும்! தொடர்ச்சியான செயலைப் பற்றி சிந்திக்கவும்",
+    "previous": "முந்தைய",
+    "next": "அடுத்த",
+    "home": "முகப்பு",
+    "readAloud": "சத்தமாக வாசிக்கவும்"
+  },
+  "te": {
+    "selectVoice": "స్వరాన్ని ఎంచుకోండి",
+    "commonUsages": "సాధారణ వాడకాలు",
+    "practice": "అభ్యాసం",
+    "fillInBlank": "ఖాళీని పూరించండి",
+    "tryAgain": "మళ్ళీ ప్రయత్నించండి! నిరంతర చర్య గురించి ఆలోచించండి",
+    "previous": "మునుపటి",
+    "next": "తదుపరి",
+    "home": "హోమ్",
+    "readAloud": "బిగ్గరగా చదవండి"
   }
 } 
