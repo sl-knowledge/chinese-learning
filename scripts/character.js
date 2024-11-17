@@ -116,6 +116,44 @@ class CharacterLearning {
                 console.log('Language changed to:', this.translationLang);
             });
         }
+
+        // Add region selector functionality
+        document.querySelectorAll('.region-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Update active button
+                document.querySelectorAll('.region-btn').forEach(b => 
+                    b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show/hide language options based on range
+                const range = btn.dataset.region;
+                const options = langSelect.options;
+                
+                // First, hide all options except English (default)
+                for (let i = 1; i < options.length; i++) {
+                    const option = options[i];
+                    const text = option.text;
+                    // Get first letter of language name (ignoring native script)
+                    const firstLetter = text.split('-')[0].trim()[0].toUpperCase();
+                    
+                    if (range === 'a-g') {
+                        option.style.display = firstLetter >= 'A' && firstLetter <= 'G' ? '' : 'none';
+                    } else if (range === 'h-n') {
+                        option.style.display = firstLetter >= 'H' && firstLetter <= 'N' ? '' : 'none';
+                    } else if (range === 'o-z') {
+                        option.style.display = firstLetter >= 'O' && firstLetter <= 'Z' ? '' : 'none';
+                    }
+                }
+
+                console.log(`Switched to range: ${range}`);
+            });
+        });
+
+        // Trigger click on A-G button by default
+        const defaultBtn = document.querySelector('[data-region="a-g"]');
+        if (defaultBtn) {
+            defaultBtn.click();
+        }
     }
 
     setupEventListeners() {

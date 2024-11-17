@@ -9,23 +9,38 @@
 </head>
 <body>
     <div class="language-selector">
-        <label for="translation-select">Translation Language:</label>
+        <div class="region-selector">
+            <button class="region-btn active" data-region="a-g">A - G</button>
+            <button class="region-btn" data-region="h-n">H - N</button>
+            <button class="region-btn" data-region="o-z">O - Z</button>
+        </div>
         <select id="translation-select">
-            <option value="en">English</option>
-            <option value="it">Italiano</option>
-            <option value="th">ไทย</option>
-            <option value="pt">Português</option>
-            <option value="ru">Русский</option>
-            <option value="vi">Tiếng Việt</option>
-            <option value="id">Bahasa Indonesia</option>
-            <option value="sw">Kiswahili</option>
-            <option value="fa">فارسی</option>
-            <option value="ar">العربية</option>
-            <option value="ja">日本語</option>
-            <option value="ko">한국어</option>
-            <option value="es">Español</option>
-            <option value="fr">Français</option>
-            <option value="de">Deutsch</option>
+            <option value="en">English (Default)</option>
+            
+            <!-- A to G Languages (without label) -->
+            <option value="ar">Arabic - العربية</option>
+            <option value="bn">Bengali - বাংলা</option>
+            <option value="de">German - Deutsch</option>
+            <option value="fa">Persian - فارسی</option>
+            <option value="fr">French - Français</option>
+
+            <!-- H to N Languages (without label) -->
+            <option value="hi">Hindi - हिन्दी</option>
+            <option value="id">Indonesian - Bahasa Indonesia</option>
+            <option value="it">Italian - Italiano</option>
+            <option value="ja">Japanese - 日本語</option>
+            <option value="ko">Korean - 한국어</option>
+            <option value="ms">Malay - Bahasa Melayu</option>
+
+            <!-- O to Z Languages (without label) -->
+            <option value="pt">Portuguese - Português</option>
+            <option value="ru">Russian - Русский</option>
+            <option value="es">Spanish - Español</option>
+            <option value="sw">Swahili - Kiswahili</option>
+            <option value="th">Thai - ไทย</option>
+            <option value="tr">Turkish - Türkçe</option>
+            <option value="ur">Urdu - اردو</option>
+            <option value="vi">Vietnamese - Tiếng Việt</option>
         </select>
     </div>
 

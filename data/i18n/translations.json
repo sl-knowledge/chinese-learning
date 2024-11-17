@@ -61,7 +61,7 @@
     "fillInBlank": "Заполните пропуск",
     "tryAgain": "Попробуйте снова! Подумайте о продолжающемся действии",
     "previous": "Предыдущий",
-    "next": "Следующий",
+    "next": "Седующий",
     "home": "Главная",
     "readAloud": "Прочитать вслух"
   },
@@ -102,7 +102,7 @@
     "selectVoice": "انتخاب صدا",
     "commonUsages": "کاربردهای رایج",
     "practice": "تمرین",
-    "fillInBlank": "جای خ��لی را پر کنید",
+    "fillInBlank": "جای خلی را پر کنید",
     "tryAgain": "دوباره تلاش کنید! به عمل مداوم فکر کنید",
     "previous": "قبلی",
     "next": "بعدی",
@@ -163,5 +163,60 @@
     "next": "Nächste",
     "home": "Start",
     "readAloud": "Vorlesen"
+  },
+  "tr": {
+    "selectVoice": "Ses Seçin",
+    "commonUsages": "Yaygın Kullanımlar",
+    "practice": "Alıştırma",
+    "fillInBlank": "Boşluğu doldurun",
+    "tryAgain": "Tekrar deneyin! Sürekli eylemi düşünün",
+    "previous": "Önceki",
+    "next": "Sonraki",
+    "home": "Ana Sayfa",
+    "readAloud": "Sesli Oku"
+  },
+  "hi": {
+    "selectVoice": "आवाज़ चुनें",
+    "commonUsages": "सामान्य प्रयोग",
+    "practice": "अभ्यास",
+    "fillInBlank": "रिक्त स्थान भरें",
+    "tryAgain": "फिर से प्रयास करें! निरंतर क्रिया के बारे में सोचें",
+    "previous": "पिछला",
+    "next": "अगला",
+    "home": "मुख्य पृष्ठ",
+    "readAloud": "जोर से पढ़ें"
+  },
+  "bn": {
+    "selectVoice": "কণ্ঠস্বর নির্বাচন করুন",
+    "commonUsages": "সাধারণ ব্যবহার",
+    "practice": "অনুশীলন",
+    "fillInBlank": "শূন্যস্থান পূরণ করুন",
+    "tryAgain": "আবার চেষ্টা করুন! ক্রমাগত ক্রিয়া সম্পর্কে ভাবুন",
+    "previous": "পূর্ববর্তী",
+    "next": "পরবর্তী",
+    "home": "হোম",
+    "readAloud": "জোরে পড়ুন"
+  },
+  "ur": {
+    "selectVoice": "آواز منتخب کریں",
+    "commonUsages": "عام استعمال",
+    "practice": "مشق",
+    "fillInBlank": "خالی جگہ پر کریں",
+    "tryAgain": "دوبارہ کوشش کریں! مسلسل عمل کے بارے میں سوچیں",
+    "previous": "پچھلا",
+    "next": "اگلا",
+    "home": "ہوم",
+    "readAloud": "بلند آواز میں پڑھیں"
+  },
+  "ms": {
+    "selectVoice": "Pilih Suara",
+    "commonUsages": "Penggunaan Umum",
+    "practice": "Latihan",
+    "fillInBlank": "Isi tempat kosong",
+    "tryAgain": "Cuba lagi! Fikirkan tentang tindakan berterusan",
+    "previous": "Sebelumnya",
+    "next": "Seterusnya",
+    "home": "Laman Utama",
+    "readAloud": "Baca Dengan Kuat"
   }
 } 

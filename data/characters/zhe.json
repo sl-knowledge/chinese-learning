@@ -29,7 +29,12 @@
                 "it": "Azione Progressiva",
                 "th": "การกระทำต่อเนื่อง",
                 "ko": "진행 동작",
-                "de": "Progressive Handlung"
+                "de": "Progressive Handlung",
+                "tr": "Sürekli Eylem",
+                "hi": "प्रगतिशील क्रिया",
+                "bn": "চলমান ক্রিয়া",
+                "ur": "جاری عمل",
+                "ms": "Tindakan Berterusan"
             },
             "chinese_title": "正在",
             "chinese": "他正在看着书。",
@@ -49,7 +54,12 @@
                 "it": "Lui sta leggendo un libro",
                 "th": "เขากำลังอ่านหนังสือ",
                 "ko": "그가 책을 읽고 있다",
-                "de": "Er liest gerade ein Buch"
+                "de": "Er liest gerade ein Buch",
+                "tr": "O kitap okuyor",
+                "hi": "वह किताब पढ़ रहा है",
+                "bn": "সে বই পড়ছে",
+                "ur": "وہ کتاب پڑھ رہا ہے",
+                "ms": "Dia sedang membaca buku"
             }
         },
         {
@@ -68,7 +78,12 @@
                 "it": "Stato Continuo",
                 "th": "สภาวะต่อเนื่อง",
                 "ko": "지속 상태",
-                "de": "Andauernder Zustand"
+                "de": "Andauernder Zustand",
+                "tr": "Sürekli Durum",
+                "hi": "निरंतर स्थिति",
+                "bn": "অবিরত অবস্থা",
+                "ur": "مسلسل حالت",
+                "ms": "Keadaan Berterusan"
             },
             "chinese": "门开着。",
             "pinyin": "Mén kāi zhe.",
@@ -87,7 +102,12 @@
                 "it": "La porta è aperta (rimane aperta)",
                 "th": "ประตูเปิดอยู่ (ยังคงเปิดอยู่)",
                 "ko": "문이 열려 있다 (계속 열린 상태)",
-                "de": "Die Tür ist offen (bleibt offen)"
+                "de": "Die Tür ist offen (bleibt offen)",
+                "tr": "Kapı açık (açık durumda kalıyor)",
+                "hi": "दरवाजा खुला है (खुला रहता है)",
+                "bn": "দরজা খোলা আছে (খোলা অবস্থায় আছে)",
+                "ur": "دروازہ کھلا ہے (کھلا رہتا ہے)",
+                "ms": "Pintu terbuka (kekal terbuka)"
             }
         },
         {
@@ -106,7 +126,12 @@
                 "it": "Nei Composti",
                 "th": "ในคำประสม",
                 "ko": "복합어에서",
-                "de": "In Zusammensetzungen"
+                "de": "In Zusammensetzungen",
+                "tr": "Bileşik Yapılarda",
+                "hi": "संयुक्त शब्दों में",
+                "bn": "যৌগিক শব্দে",
+                "ur": "مرکب الفاظ میں",
+                "ms": "Dalam Kata Majmuk"
             },
             "chinese_title": "着重 (zhuózhòng)",
             "chinese": "着重说明",
@@ -126,7 +151,12 @@
                 "it": "Enfatizzare; sottolineare (nota: qui 着 si pronuncia zháo)",
                 "th": "เน้น; ให้ความสำคัญ (หมายเหตุ: ที่นี่ 着 ออกเสียง zháo)",
                 "ko": "강조하다; 중점을 두다 (참고: 여기서 着는 zháo로 발음)",
-                "de": "Betonen; hervorheben (Hinweis: hier wird 着 als zháo ausgesprochen)"
+                "de": "Betonen; hervorheben (Hinweis: hier wird 着 als zháo ausgesprochen)",
+                "tr": "Vurgulamak; önem vermek (not: burada 着 zháo olarak okunur)",
+                "hi": "जोर देना; महत्व देना (नोट: यहाँ 着 को zháo के रूप में उच्चारण किया जाता है)",
+                "bn": "জোর দেওয়া; গুরুত্ব দেওয়া (নোট: এখানে 着 উচ্চারিত হয় zháo হিসেবে)",
+                "ur": "زور دینا؛ اہمیت دینا (نوٹ: یہاں 着 کو zháo کے طور پر پڑھا جاتا ہے)",
+                "ms": "Menekankan; memberi penekanan (nota: di sini 着 disebut sebagai zháo)"
             }
         }
     ],
@@ -149,7 +179,12 @@
             "it": "Corretto! 着 viene usato qui per mostrare un'azione continua - 'stare in piedi aspettando'",
             "th": "ถูกต้อง! 着 ใช้ในที่นี้เพื่อแสดงการกระทำต่อเนื่อง - 'ยืนรออยู่'",
             "ko": "정답! 着는 여기서 지속적인 동작을 나타냅니다 - '서서 기다리고 있다'",
-            "de": "Richtig! 着 wird hier verwendet, um eine andauernde Handlung zu zeigen - 'stehen und warten'"
+            "de": "Richtig! 着 wird hier verwendet, um eine andauernde Handlung zu zeigen - 'stehen und warten'",
+            "tr": "Doğru! 着 burada sürekli eylemi göstermek için kullanılır - 'ayakta bekliyor'",
+            "hi": "सही! 着 का प्रयोग यहाँ निरंतर क्रिया दिखाने के लिए किया गया है - 'खड़े होकर प्रतीक्षा करना'",
+            "bn": "সঠিক! এখানে 着 ব্যবহৃত হয়েছে অবিরত ক্রিয়া বোঝাতে - 'দাঁড়িয়ে অপেক্ষা করা'",
+            "ur": "درست! یہاں 着 مسلسل عمل کو ظاہر کرنے کے لیے استعمال ہوتا ہے - 'کھڑے ہو کر انتظار کرنا'",
+            "ms": "Betul! 着 digunakan di sini untuk menunjukkan tindakan berterusan - 'berdiri menunggu'"
         }
     },
     "pronunciation_note": {
@@ -167,6 +202,11 @@
         "it": "Nota: zhe (tono neutro) è più comune, zháo si usa in composti specifici",
         "th": "หมายเหตุ: zhe (เสียงเรียบ) พบบ่อยที่สุด, zháo ใช้ในคำประสมเฉพาะ",
         "ko": "참고: zhe(경성)가 가장 일반적이며, zháo는 특정 복합어에서 사용됩니다",
-        "de": "Hinweis: zhe (neutraler Ton) ist am häufigsten, zháo wird in bestimmten Zusammensetzungen verwendet"
+        "de": "Hinweis: zhe (neutraler Ton) ist am häufigsten, zháo wird in bestimmten Zusammensetzungen verwendet",
+        "tr": "Not: zhe (nötr ton) en yaygın olanıdır, zháo özel bileşik yapılarda kullanılır",
+        "hi": "नोट: zhe (न्यूट्रल टोन) सबसे आम है, zháo का प्रयोग विशिष्ट संयुक्त शब्दों में किया जाता है",
+        "bn": "নোট: zhe (নিরপেক্ষ স্বর) সবচেয়ে সাধারণ, zháo ব্যবহৃত হয় নির্দিষ্ট যৌগিক শব্দে",
+        "ur": "نوٹ: zhe (خنثی لہجہ) سب سے عام ہے، zháo خاص مرکب الفاظ میں استعمال ہوتا ہے",
+        "ms": "Nota: zhe (nada neutral) paling biasa, zháo digunakan dalam kata majmuk tertentu"
     }
 } 
