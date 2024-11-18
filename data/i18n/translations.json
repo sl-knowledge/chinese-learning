@@ -301,10 +301,43 @@
     "commonUsages": "సాధారణ వాడకాలు",
     "practice": "అభ్యాసం",
     "fillInBlank": "ఖాళీని పూరించండి",
-    "tryAgain": "మళ్ళీ ప్రయత్నించండి! నిరంతర చర్య గురించి ఆలోచించండి",
+    "tryAgain": "మళ్ళీ ప్రయత్న��ంచండి! నిరంతర చర్య గురించి ఆలోచించండి",
     "previous": "మునుపటి",
     "next": "తదుపరి",
     "home": "హోమ్",
     "readAloud": "బిగ్గరగా చదవండి"
+  },
+  "el": {
+    "selectVoice": "Επιλογή φωνής",
+    "commonUsages": "Συνήθεις χρήσεις",
+    "practice": "Εξάσκηση",
+    "fillInBlank": "Συμπληρώστε το κενό",
+    "tryAgain": "Προσπαθήστε ξανά! Σκεφτείτε τη συνεχή δράση",
+    "previous": "Προηγούμενο",
+    "next": "Επόμενο",
+    "home": "Αρχική",
+    "readAloud": "Ανάγνωση"
+  },
+  "hu": {
+    "selectVoice": "Hang kiválasztása",
+    "commonUsages": "Általános használat",
+    "practice": "Gyakorlás",
+    "fillInBlank": "Töltse ki az űrt",
+    "tryAgain": "Próbálja újra! Gondoljon a folyamatos cselekvésre",
+    "previous": "Előző",
+    "next": "Következő",
+    "home": "Kezdőlap",
+    "readAloud": "Felolvasás"
+  },
+  "sr": {
+    "selectVoice": "Изаберите глас",
+    "commonUsages": "Уобичајена употреба",
+    "practice": "Вежба",
+    "fillInBlank": "Попуните празнину",
+    "tryAgain": "Покушајте поново! Размислите о континуираној радњи",
+    "previous": "Претходно",
+    "next": "Следеће",
+    "home": "Почетна",
+    "readAloud": "Читај наглас"
   }
 } 

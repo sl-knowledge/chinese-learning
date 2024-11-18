@@ -5,14 +5,24 @@ class CharacterLearning {
         this.translations = {};
         this.characterData = {};
         
-        // Debug logs
-        console.log('Initializing CharacterLearning...');
-        console.log('Initial translation language:', this.translationLang);
+        // 添加初始化状态跟踪
+        this.initialized = false;
+        console.log('Starting initialization...');
         
-        this.init();
+        // 确保DOM加载完成后再初始化
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.init());
+        } else {
+            this.init();
+        }
     }
 
     async init() {
+        if (this.initialized) {
+            console.log('Already initialized');
+            return;
+        }
+
         try {
             await Promise.all([
                 this.loadTranslations(),
@@ -21,9 +31,11 @@ class CharacterLearning {
             
             this.setupEventListeners();
             this.setupVoiceSelection();
+            this.setupLanguageSelector();  // 确保语言选择器正确设置
             this.updatePageLanguage();
             this.updatePageContent();
             
+            this.initialized = true;
             console.log('Initialization complete');
         } catch (error) {
             console.error('Initialization error:', error);
@@ -33,7 +45,7 @@ class CharacterLearning {
     async loadTranslations() {
         try {
             console.log('Loading translations...');
-            const response = await fetch('./data/i18n/translations.json');
+            const response = await fetch('data/i18n/translations.json');
             this.translations = await response.json();
             console.log('Translations loaded:', this.translations);
         } catch (error) {
@@ -44,7 +56,7 @@ class CharacterLearning {
     async loadCharacterData() {
         try {
             console.log('Loading character data...');
-            const response = await fetch('./data/characters/zhe.json');
+            const response = await fetch('data/characters/zhe.json');
             this.characterData = await response.json();
             console.log('Character data loaded:', this.characterData);
         } catch (error) {
@@ -104,64 +116,61 @@ class CharacterLearning {
     }
 
     setupLanguageSelector() {
-        console.log('Setting up language selector...');
         const langSelect = document.getElementById('translation-select');
-        if (langSelect) {
-            langSelect.value = this.translationLang;
-            langSelect.addEventListener('change', (e) => {
-                this.translationLang = e.target.value;
-                localStorage.setItem('translationLanguage', this.translationLang);
-                this.updatePageLanguage();
-                this.updatePageContent();
-                console.log('Language changed to:', this.translationLang);
-            });
+        if (!langSelect) {
+            console.error('Language select element not found');
+            return;
+        }
 
-            // Add region selector functionality
-            document.querySelectorAll('.region-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    console.log('Region button clicked:', btn.dataset.region);
-                    
-                    // Update active button
-                    document.querySelectorAll('.region-btn').forEach(b => 
-                        b.classList.remove('active'));
-                    btn.classList.add('active');
+        // 移除旧的事件监听器
+        langSelect.replaceWith(langSelect.cloneNode(true));
+        const newLangSelect = document.getElementById('translation-select');
+        
+        // 设置当前语言
+        newLangSelect.value = this.translationLang;
+        
+        // 添加新的事件监听器
+        newLangSelect.addEventListener('change', (e) => {
+            this.translationLang = e.target.value;
+            localStorage.setItem('translationLanguage', this.translationLang);
+            this.updatePageLanguage();
+            this.updatePageContent();
+            console.log('Language changed to:', this.translationLang);
+        });
 
-                    // Show/hide language options based on range
-                    const range = btn.dataset.region;
-                    const options = Array.from(langSelect.options);
-                    
-                    // Skip the first option (English)
-                    options.slice(1).forEach(option => {
-                        const languageName = option.text.split('-')[0].trim();
-                        const firstLetter = languageName.toUpperCase().charAt(0);
-                        
-                        let shouldShow = false;
-                        switch(range) {
-                            case 'a-f':
-                                shouldShow = firstLetter >= 'A' && firstLetter <= 'F';
-                                break;
-                            case 'g-m':
-                                shouldShow = firstLetter >= 'G' && firstLetter <= 'M';
-                                break;
-                            case 'n-z':
-                                shouldShow = firstLetter >= 'N' && firstLetter <= 'Z';
-                                break;
-                        }
-                        
-                        // Apply display style and log the change
-                        option.style.display = shouldShow ? '' : 'none';
-                        console.log(`Language: ${languageName}, First Letter: ${firstLetter}, Show: ${shouldShow}, Range: ${range}`);
-                    });
+        // 设置区域按钮
+        this.setupRegionButtons(newLangSelect);
+    }
+
+    setupRegionButtons(langSelect) {
+        document.querySelectorAll('.region-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.region-btn').forEach(b => 
+                    b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show/hide language options
+                const range = btn.dataset.region;
+                Array.from(langSelect.options).slice(1).forEach(option => {
+                    const languageName = option.text.split('-')[0].trim();
+                    const firstLetter = languageName.charAt(0).toUpperCase();
+                    option.style.display = this.isInRange(firstLetter, range) ? '' : 'none';
                 });
             });
+        });
 
-            // Trigger click on A-F button by default and verify immediately after
-            const defaultBtn = document.querySelector('[data-region="a-f"]');
-            if (defaultBtn) {
-                console.log('Clicking default A-F button');
-                defaultBtn.click();
-                this.verifyLanguageFormat();
-            }
+        // Set initial state
+        const defaultBtn = document.querySelector('[data-region="a-h"]');
+        if (defaultBtn) defaultBtn.click();
+    }
+
+    isInRange(letter, range) {
+        switch(range) {
+            case 'a-h': return letter >= 'A' && letter <= 'H';
+            case 'i-p': return letter >= 'I' && letter <= 'P';
+            case 'q-z': return letter >= 'Q' && letter <= 'Z';
+            default: return false;
         }
     }
 
@@ -269,13 +278,15 @@ class CharacterLearning {
     }
 
     updatePageLanguage() {
-        console.log('Updating page language...');
+        console.log('Updating page language to:', this.translationLang);
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
-            const translation = this.translations[this.translationLang]?.[key] || 
-                              this.translations['en'][key] || 
-                              key;
-            element.textContent = translation;
+            if (this.translations[this.translationLang] && this.translations[this.translationLang][key]) {
+                element.textContent = this.translations[this.translationLang][key];
+            } else {
+                console.warn(`Translation missing for key: ${key} in language: ${this.translationLang}`);
+                element.textContent = this.translations.en[key] || key;
+            }
         });
     }
 

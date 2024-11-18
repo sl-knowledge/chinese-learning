@@ -41,7 +41,7 @@
 
             <!-- Q to Z -->
             <option value="pt">Portuguese - Português</option>
-            <option value="ru">Russian - Русский</option>
+            <option value="ru">Russian - Руский</option>
             <option value="sr">Serbian - Српски</option>
             <option value="es">Spanish - Español</option>
             <option value="sw">Swahili - Kiswahili</option>
@@ -133,11 +133,9 @@
     </div>
 
     <script>
-        // Initialize the CharacterLearning class
-        let app;
+        // Create instance after DOM loads
         document.addEventListener('DOMContentLoaded', () => {
-            app = new CharacterLearning();
-            app.setupLanguageSelector();
+            window.app = new CharacterLearning();
         });
 
         function checkAnswer(answer) {
