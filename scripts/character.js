@@ -56,7 +56,7 @@ class CharacterLearning {
     async loadCharacterData() {
         try {
             console.log('Loading character data...');
-            const response = await fetch('/chinese-character-learning/data/characters/zhe.json');
+            const response = await fetch('/chinese-learning/data/characters/zhe.json');
             this.characterData = await response.json();
             console.log('Character data loaded:', this.characterData);
         } catch (error) {
