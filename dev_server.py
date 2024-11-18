@@ -1,5 +1,4 @@
 from flask import Flask, send_from_directory
-import os
 
 app = Flask(__name__)
 
@@ -19,5 +18,4 @@ def serve_file(path):
 
 if __name__ == '__main__':
     print("Server starting...")
-    print("Current directory:", os.getcwd())
     app.run(host='0.0.0.0', port=5000, debug=True) 

@@ -45,7 +45,7 @@ class CharacterLearning {
     async loadTranslations() {
         try {
             console.log('Loading translations...');
-            const response = await fetch('data/i18n/translations.json');
+            const response = await fetch('/chinese-character-learning/data/i18n/translations.json');
             this.translations = await response.json();
             console.log('Translations loaded:', this.translations);
         } catch (error) {
@@ -56,7 +56,7 @@ class CharacterLearning {
     async loadCharacterData() {
         try {
             console.log('Loading character data...');
-            const response = await fetch('data/characters/zhe.json');
+            const response = await fetch('/chinese-character-learning/data/characters/zhe.json');
             this.characterData = await response.json();
             console.log('Character data loaded:', this.characterData);
         } catch (error) {
