@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>学习"着"字 - Learning Chinese Character 着</title>
+    <link rel="stylesheet" href="styles/character.css">
+    <script src="scripts/character.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="language-selector">
+        <div class="region-selector">
+            <button class="region-btn active" data-region="a-h">A - H</button>
+            <button class="region-btn" data-region="i-p">I - P</button>
+            <button class="region-btn" data-region="q-z">Q - Z</button>
+        </div>
+        <select id="translation-select">
+            <option value="en">English (Default)</option>
+            
+            <!-- A to H -->
+            <option value="ar" class="rtl-option">Arabic - العربية</option>
+            <option value="bn">Bengali - বাংলা</option>
+            <option value="bu">Burmese - မြန်မာစာ</option>
+            <option value="el">Greek - Ελληνικά</option>
+            <option value="fa" class="rtl-option">Farsi - فارسی</option>
+            <option value="fr">French - Français</option>
+            <option value="de">German - Deutsch</option>
+            <option value="hi">Hindi - हिन्दी</option>
+            <option value="hu">Hungarian - Magyar</option>
+
+            <!-- I to P -->
+            <option value="id">Indonesian - Bahasa Indonesia</option>
+            <option value="it">Italian - Italiano</option>
+            <option value="ja">Japanese - 日本語</option>
+            <option value="kk">Kazakh - қазақ тілі</option>
+            <option value="km">Khmer - ខ្មែរ</option>
+            <option value="ko">Korean - 한국어</option>
+            <option value="lo">Lao - ລາວ</option>
+            <option value="ms">Malay - Bahasa Melayu</option>
+            <option value="mn">Mongolian - Монгол</option>
+
+            <!-- Q to Z -->
+            <option value="pt">Portuguese - Português</option>
+            <option value="ru">Russian - Руский</option>
+            <option value="sr">Serbian - Српски</option>
+            <option value="es">Spanish - Español</option>
+            <option value="sw">Swahili - Kiswahili</option>
+            <option value="ta">Tamil - தமிழ்</option>
+            <option value="te">Telugu - తెలుగు</option>
+            <option value="th">Thai - ไทย</option>
+            <option value="tr">Turkish - Türkçe</option>
+            <option value="ur">Urdu - اردو</option>
+            <option value="uz">Uzbek - O'zbek tili</option>
+            <option value="vi">Vietnamese - Tiếng Việt</option>
+        </select>
+    </div>
+
+    <div class="character-section">
+        <div class="big-char">着</div>
+        <div class="pronunciation-box">
+            <div class="pinyin">
+                <div class="pronunciation">
+                    <span>zhe</span><span class="tone-number">(5)</span>
+                    <span class="separator">•</span>
+                    <span>zháo</span><span class="tone-number">(2)</span>
+                </div>
+            </div>
+            <div class="pronunciation-note">
+                <small>Note: zhe (neutral tone) is most common, zháo is used in specific compounds</small>
+            </div>
+        </div>
+        <div class="voice-control">
+            <label for="voice-select" data-i18n="selectVoice">Select Voice:</label>
+            <select id="voice-select">
+                <option value="">Loading voices...</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="usage-section">
+        <h2 data-i18n="commonUsages">Common Usages</h2>
+        
+        <div class="usage-card" data-usage-id="1">
+            <h3 data-i18n="examples.progressiveAction.title">Progressive Action (正在)</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    <span class="text">他正在看<b>着</b>书。</span>
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">Tā zhèngzài kàn zhe shū.</span><br>
+                    <span class="meaning" data-i18n="examples.progressiveAction.meaning">He is reading a book.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-card" data-usage-id="2">
+            <h3 data-i18n="examples.continuousState.title">Continuous State</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    门开<b>着</b>。
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">Mén kāi zhe.</span><br>
+                    <span class="meaning" data-i18n="examples.continuousState.meaning">The door is open (remains open).</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="usage-card" data-usage-id="3">
+            <h3 data-i18n="examples.emphasis.title">In Compounds (着重 zhuózhòng)</h3>
+            <div class="example hidden">
+                <div class="chinese-text">
+                    着重说明
+                </div>
+                <div class="translation hidden">
+                    <span class="pinyin">zhuózhòng shuōmíng</span><br>
+                    <span class="meaning" data-i18n="examples.emphasis.meaning">Emphasize; stress</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="practice-section">
+        <h2 data-i18n="practice">Practice</h2>
+        <div id="quiz">
+            <p data-i18n="fillInBlank">Fill in the blank:</p>
+            <p>他站_____等人。</p>
+            <button class="quiz-button" onclick="checkAnswer('着')">着</button>
+            <button class="quiz-button" onclick="checkAnswer('了')">了</button>
+            <button class="quiz-button" onclick="checkAnswer('过')">过</button>
+            <p id="result" class="hidden"></p>
+        </div>
+    </div>
+
+    <script>
+        // Create instance after DOM loads
+        document.addEventListener('DOMContentLoaded', () => {
+            window.app = new CharacterLearning();
+        });
+
+        function checkAnswer(answer) {
+            // Use the app instance to access translations and character data
+            if (app) {
+                app.checkAnswer(answer);
+            } else {
+                console.error('App not initialized');
+            }
+        }
+    </script>
+</body>
+</html> 

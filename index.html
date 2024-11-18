@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Chinese Character Learning</title>
+    <link rel="stylesheet" href="styles/character.css">
+</head>
+<body>
+    <div class="language-selector">
+        <div class="region-selector">
+            <button class="region-btn active" data-region="a-h">A - H</button>
+            <button class="region-btn" data-region="i-p">I - P</button>
+            <button class="region-btn" data-region="q-z">Q - Z</button>
+        </div>
+        <select id="translation-select">
+            <!-- Language options will be the same as study-zhe.html -->
+        </select>
+    </div>
+
+    <div class="main-content">
+        <h1>Chinese Character Learning</h1>
+        
+        <div class="character-grid">
+            <div class="character-card">
+                <a href="study-zhe.html">
+                    <div class="character">着</div>
+                    <div class="pinyin">zhe/zháo</div>
+                    <div class="meaning">Progressive marker; in compounds</div>
+                </a>
+            </div>
+            <!-- More character cards can be added here -->
+        </div>
+    </div>
+
+    <style>
+        .main-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .character-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .character-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .character-card .character {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .character-card .pinyin {
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .character-card .meaning {
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            window.app = new CharacterLearning();
+        });
+    </script>
+</body>
+</html>
