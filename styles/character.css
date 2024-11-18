@@ -277,4 +277,30 @@ option[value="ur"] {
 .rtl-option {
     direction: rtl;
     text-align: right;
+}
+
+.stroke-order {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.stroke-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.stroke-link:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.stroke-link i {
+    color: #666;
 } 
