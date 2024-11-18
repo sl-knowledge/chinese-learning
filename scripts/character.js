@@ -45,7 +45,9 @@ class CharacterLearning {
     async loadTranslations() {
         try {
             console.log('Loading translations...');
-            const response = await fetch('/chinese-learning/data/i18n/translations.json');
+            // Use relative path for both local and production
+            const basePath = window.location.hostname === 'localhost' ? '.' : '/chinese-learning';
+            const response = await fetch(`${basePath}/data/i18n/translations.json`);
             this.translations = await response.json();
             console.log('Translations loaded:', this.translations);
         } catch (error) {
@@ -56,7 +58,9 @@ class CharacterLearning {
     async loadCharacterData() {
         try {
             console.log('Loading character data...');
-            const response = await fetch('/chinese-learning/data/characters/zhe.json');
+            // Use relative path for both local and production
+            const basePath = window.location.hostname === 'localhost' ? '.' : '/chinese-learning';
+            const response = await fetch(`${basePath}/data/characters/zhe.json`);
             this.characterData = await response.json();
             console.log('Character data loaded:', this.characterData);
         } catch (error) {
