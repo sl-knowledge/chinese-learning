@@ -7,9 +7,14 @@
             "usage": "auxiliary - continuous action/state"
         },
         {
-            "pinyin": "zháo",
+            "pinyin": "zhuó",
             "tone": 2,
             "usage": "in compounds like 着重(zhuózhòng)"
+        },
+        {
+            "pinyin": "zháo",
+            "tone": 2,
+            "usage": "in compounds like 着落(zháluò)"
         }
     ],
     "usages": [
