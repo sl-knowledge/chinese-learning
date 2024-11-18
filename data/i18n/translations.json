@@ -8,7 +8,8 @@
     "previous": "Previous",
     "next": "Next",
     "home": "Home",
-    "readAloud": "Read aloud"
+    "readAloud": "Read aloud",
+    "strokeOrder": "Stroke Order"
   },
   "ja": {
     "selectVoice": "音声を選択",
@@ -19,7 +20,8 @@
     "previous": "前へ",
     "next": "次へ",
     "home": "ホーム",
-    "readAloud": "音読"
+    "readAloud": "音読",
+    "strokeOrder": "筆順"
   },
   "it": {
     "selectVoice": "Seleziona Voce",
@@ -30,7 +32,8 @@
     "previous": "Precedente",
     "next": "Successivo",
     "home": "Home",
-    "readAloud": "Leggi ad alta voce"
+    "readAloud": "Leggi ad alta voce",
+    "strokeOrder": "Ordine di scrittura"
   },
   "th": {
     "selectVoice": "เลือกเสียง",
@@ -41,7 +44,8 @@
     "previous": "ก่อนหน้า",
     "next": "ถัดไป",
     "home": "หน้าแรก",
-    "readAloud": "อ่านออกเสียง"
+    "readAloud": "อ่านออกเสียง",
+    "strokeOrder": "ลำดับการเขียน"
   },
   "pt": {
     "selectVoice": "Selecionar Voz",
@@ -52,7 +56,8 @@
     "previous": "Anterior",
     "next": "Próximo",
     "home": "Início",
-    "readAloud": "Ler em voz alta"
+    "readAloud": "Ler em voz alta",
+    "strokeOrder": "Ordem de Escrita"
   },
   "ru": {
     "selectVoice": "Выбрать голос",
@@ -63,7 +68,8 @@
     "previous": "Предыдущий",
     "next": "Седующий",
     "home": "Главная",
-    "readAloud": "Прочитать вслух"
+    "readAloud": "Прочитать вслух",
+    "strokeOrder": "Последовательность написания"
   },
   "vi": {
     "selectVoice": "Chọn giọng đọc",
@@ -74,7 +80,8 @@
     "previous": "Trước",
     "next": "Tiếp",
     "home": "Trang chủ",
-    "readAloud": "Đọc to"
+    "readAloud": "Đọc to",
+    "strokeOrder": "Thứ tự viết"
   },
   "id": {
     "selectVoice": "Pilih Suara",
@@ -85,7 +92,8 @@
     "previous": "Sebelumnya",
     "next": "Berikutnya",
     "home": "Beranda",
-    "readAloud": "Baca keras"
+    "readAloud": "Baca keras",
+    "strokeOrder": "Urutan Penulisan"
   },
   "sw": {
     "selectVoice": "Chagua Sauti",
@@ -96,7 +104,8 @@
     "previous": "Iliyotangulia",
     "next": "Inayofuata",
     "home": "Nyumbani",
-    "readAloud": "Soma kwa sauti"
+    "readAloud": "Soma kwa sauti",
+    "strokeOrder": "Mwelekeo wa Kufanya"
   },
   "fa": {
     "selectVoice": "انتخاب صدا",
@@ -107,7 +116,8 @@
     "previous": "قبلی",
     "next": "بعدی",
     "home": "خانه",
-    "readAloud": "با صدای بلند بخوانید"
+    "readAloud": "با صدای بلند بخوانید",
+    "strokeOrder": "ترتیب نویسی"
   },
   "ar": {
     "selectVoice": "اختيار الصوت",
@@ -118,7 +128,8 @@
     "previous": "السابق",
     "next": "التالي",
     "home": "الرئيسية",
-    "readAloud": "قراءة بصوت عالٍ"
+    "readAloud": "قراءة بصوت عالٍ",
+    "strokeOrder": "ترتيب الصوت"
   },
   "es": {
     "selectVoice": "Seleccionar Voz",
@@ -129,7 +140,8 @@
     "previous": "Anterior",
     "next": "Siguiente",
     "home": "Inicio",
-    "readAloud": "Leer en voz alta"
+    "readAloud": "Leer en voz alta",
+    "strokeOrder": "Orden de Escritura"
   },
   "fr": {
     "selectVoice": "Sélectionner la Voix",
@@ -140,7 +152,8 @@
     "previous": "Précédent",
     "next": "Suivant",
     "home": "Accueil",
-    "readAloud": "Lire à haute voix"
+    "readAloud": "Lire à haute voix",
+    "strokeOrder": "Ordre d'Écriture"
   },
   "ko": {
     "selectVoice": "음성 선택",
@@ -151,7 +164,8 @@
     "previous": "이전",
     "next": "다음",
     "home": "홈",
-    "readAloud": "소리내어 읽기"
+    "readAloud": "소리내어 읽기",
+    "strokeOrder": "음성 순서"
   },
   "de": {
     "selectVoice": "Stimme auswählen",
@@ -162,7 +176,8 @@
     "previous": "Vorherige",
     "next": "Nächste",
     "home": "Start",
-    "readAloud": "Vorlesen"
+    "readAloud": "Vorlesen",
+    "strokeOrder": "Schriftfolge"
   },
   "tr": {
     "selectVoice": "Ses Seçin",
@@ -173,7 +188,8 @@
     "previous": "Önceki",
     "next": "Sonraki",
     "home": "Ana Sayfa",
-    "readAloud": "Sesli Oku"
+    "readAloud": "Sesli Oku",
+    "strokeOrder": "Yazılış Sırası"
   },
   "hi": {
     "selectVoice": "आवाज़ चुनें",
@@ -184,7 +200,8 @@
     "previous": "पिछला",
     "next": "अगला",
     "home": "मुख्य पृष्ठ",
-    "readAloud": "जोर से पढ़ें"
+    "readAloud": "जोर से पढ़ें",
+    "strokeOrder": "वर्ण क्रम"
   },
   "bn": {
     "selectVoice": "কণ্ঠস্বর নির্বাচন করুন",
@@ -195,7 +212,8 @@
     "previous": "পূর্ববর্তী",
     "next": "পরবর্তী",
     "home": "হোম",
-    "readAloud": "জোরে পড়ুন"
+    "readAloud": "জোরে পড়ুন",
+    "strokeOrder": "লিখনী ক্রম"
   },
   "ur": {
     "selectVoice": "آواز منتخب کریں",
@@ -206,7 +224,8 @@
     "previous": "پچھلا",
     "next": "اگلا",
     "home": "ہوم",
-    "readAloud": "بلند آواز میں پڑھیں"
+    "readAloud": "بلند آواز میں پڑھیں",
+    "strokeOrder": "آواز کی ترتیب"
   },
   "ms": {
     "selectVoice": "Pilih Suara",
@@ -217,7 +236,8 @@
     "previous": "Sebelumnya",
     "next": "Seterusnya",
     "home": "Laman Utama",
-    "readAloud": "Baca Dengan Kuat"
+    "readAloud": "Baca Dengan Kuat",
+    "strokeOrder": "Urutan Penulisan"
   },
   "mn": {
     "selectVoice": "Дуу сонгох",
@@ -228,7 +248,8 @@
     "previous": "Өмнөх",
     "next": "Дараах",
     "home": "Нүүр",
-    "readAloud": "Чанга уншиx"
+    "readAloud": "Чанга уншиx",
+    "strokeOrder": "Хөдөлгөөний дараал"
   },
   "lo": {
     "selectVoice": "ເລືອກສຽງ",
@@ -239,7 +260,8 @@
     "previous": "ກ່ອນໜ້າ",
     "next": "ຕໍ່ໄປ",
     "home": "ໜ້າຫຼັກ",
-    "readAloud": "ອ່ານອອກສຽງ"
+    "readAloud": "ອ່ານອອກສຽງ",
+    "strokeOrder": "ລຳດັບການເຂີຢນ"
   },
   "km": {
     "selectVoice": "ជ្រើសរើសសំឡេង",
@@ -250,7 +272,8 @@
     "previous": "មុន",
     "next": "បន្ទាប់",
     "home": "ទំព័រដើម",
-    "readAloud": "អានឮៗ"
+    "readAloud": "អានឮៗ",
+    "strokeOrder": "ល្បាច់ស្រាវ"
   },
   "my": {
     "selectVoice": "အသံရွေးပါ",
@@ -261,7 +284,8 @@
     "previous": "ရှေ့",
     "next": "နောက်",
     "home": "ပင်မ",
-    "readAloud": "အသံထွက်ဖတ်ပါ"
+    "readAloud": "အသံထွက်ဖတ်ပါ",
+    "strokeOrder": "အသံရွေးပါ"
   },
   "kk": {
     "selectVoice": "Дауысты таңдау",
@@ -272,7 +296,8 @@
     "previous": "Алдыңғы",
     "next": "Келесі",
     "home": "Басты бет",
-    "readAloud": "Дауыстап оқу"
+    "readAloud": "Дауыстап оқу",
+    "strokeOrder": "Әрекеттердің реті"
   },
   "uz": {
     "selectVoice": "Ovozni tanlang",
@@ -283,7 +308,8 @@
     "previous": "Oldingi",
     "next": "Keyingi",
     "home": "Bosh sahifa",
-    "readAloud": "Ovoz chiqarib o'qish"
+    "readAloud": "Ovoz chiqarib o'qish",
+    "strokeOrder": "Ovozni tanlang"
   },
   "ta": {
     "selectVoice": "குரலைத் தேர்வுசெய்க",
@@ -294,18 +320,20 @@
     "previous": "முந்தைய",
     "next": "அடுத்த",
     "home": "முகப்பு",
-    "readAloud": "சத்தமாக வாசிக்கவும்"
+    "readAloud": "சத்தமாக வாசிக்கவும்",
+    "strokeOrder": "புத்திரம் வரிசை"
   },
   "te": {
     "selectVoice": "స్వరాన్ని ఎంచుకోండి",
     "commonUsages": "సాధారణ వాడకాలు",
     "practice": "అభ్యాసం",
     "fillInBlank": "ఖాళీని పూరించండి",
-    "tryAgain": "మళ్ళీ ప్రయత్న��ంచండి! నిరంతర చర్య గురించి ఆలోచించండి",
+    "tryAgain": "మళ్ళీ ప్రయత్నంచండి! నిరంతర చర్య గురించి ఆలోచించండి",
     "previous": "మునుపటి",
     "next": "తదుపరి",
     "home": "హోమ్",
-    "readAloud": "బిగ్గరగా చదవండి"
+    "readAloud": "బిగ్గరగా చదవండి",
+    "strokeOrder": "స్వరాన్ని ఎంచుకోండి"
   },
   "el": {
     "selectVoice": "Επιλογή φωνής",
@@ -316,7 +344,8 @@
     "previous": "Προηγούμενο",
     "next": "Επόμενο",
     "home": "Αρχική",
-    "readAloud": "Ανάγνωση"
+    "readAloud": "Ανάγνωση",
+    "strokeOrder": "Πορθογραφή"
   },
   "hu": {
     "selectVoice": "Hang kiválasztása",
@@ -327,7 +356,8 @@
     "previous": "Előző",
     "next": "Következő",
     "home": "Kezdőlap",
-    "readAloud": "Felolvasás"
+    "readAloud": "Felolvasás",
+    "strokeOrder": "Hangkövetés"
   },
   "sr": {
     "selectVoice": "Изаберите глас",
@@ -338,6 +368,7 @@
     "previous": "Претходно",
     "next": "Следеће",
     "home": "Почетна",
-    "readAloud": "Читај наглас"
+    "readAloud": "Читај наглас",
+    "strokeOrder": "Писање гласова"
   }
 } 
