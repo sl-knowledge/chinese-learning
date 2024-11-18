@@ -58,13 +58,23 @@ class CharacterLearning {
     async loadCharacterData() {
         try {
             console.log('Loading character data...');
-            // Use relative path for both local and production
-            const basePath = window.location.hostname === 'localhost' ? '.' : '/chinese-learning';
-            const response = await fetch(`${basePath}/data/characters/zhe.json`);
-            this.characterData = await response.json();
-            console.log('Character data loaded:', this.characterData);
+            // Remove conditional path and use relative path directly
+            const response = await fetch('/data/characters/zhe.json');
+            console.log('Response status:', response.status);
+            console.log('Response headers:', response.headers);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const text = await response.text();
+            console.log('Raw response text:', text);
+            
+            this.characterData = JSON.parse(text);
+            console.log('Parsed character data:', this.characterData);
         } catch (error) {
             console.error('Error loading character data:', error);
+            console.error('Stack trace:', error.stack);
         }
     }
 
