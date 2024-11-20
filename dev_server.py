@@ -18,7 +18,14 @@ def debug_file_content(filepath):
 @app.route('/')
 def index():
     print("Serving index page")
-    return send_from_directory('.', 'study-zhe.html')
+    try:
+        current_dir = os.getcwd()
+        print(f"Current directory: {current_dir}")
+        print(f"Files in directory: {os.listdir(current_dir)}")
+        return send_from_directory('.', 'study-zhe.html')
+    except Exception as e:
+        print(f"Error in index route: {str(e)}")
+        return f"Error: {str(e)}", 500
 
 @app.route('/<path:path>')
 def serve_file(path):
@@ -49,6 +56,10 @@ def add_header(response):
     response.headers['Expires'] = '-1'
     response.headers['Last-Modified'] = str(datetime.now())
     return response
+
+@app.route('/test')
+def test():
+    return "Server is working!"
 
 if __name__ == '__main__':
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
