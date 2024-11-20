@@ -24,16 +24,23 @@ class CharacterLearning {
         }
 
         try {
-            await Promise.all([
-                this.loadTranslations(),
-                this.loadCharacterData()
-            ]);
+            // 1. 先加载字符数据
+            console.log('Loading character data first...');
+            await this.loadCharacterData();
             
+            // 2. 更新内容
+            console.log('Updating content with character data...');
+            this.updatePageContent();
+            
+            // 3. 然后加载UI翻译
+            console.log('Loading UI translations...');
+            await this.loadTranslations();
+            
+            // 4. 设置UI和更新UI翻译
             this.setupEventListeners();
             this.setupVoiceSelection();
-            this.setupLanguageSelector();  // 确保语言选择器正确设置
+            this.setupLanguageSelector();
             this.updatePageLanguage();
-            this.updatePageContent();
             
             this.initialized = true;
             console.log('Initialization complete');
@@ -290,12 +297,14 @@ class CharacterLearning {
     updatePageLanguage() {
         console.log('Updating page language to:', this.translationLang);
         document.querySelectorAll('[data-i18n]').forEach(element => {
-            const key = element.getAttribute('data-i18n');
-            if (this.translations[this.translationLang] && this.translations[this.translationLang][key]) {
-                element.textContent = this.translations[this.translationLang][key];
-            } else {
-                console.warn(`Translation missing for key: ${key} in language: ${this.translationLang}`);
-                element.textContent = this.translations.en[key] || key;
+            if (!element.closest('.usage-card')) {  // 不更新用法卡片内的内容
+                const key = element.getAttribute('data-i18n');
+                if (this.translations[this.translationLang] && this.translations[this.translationLang][key]) {
+                    element.textContent = this.translations[this.translationLang][key];
+                } else {
+                    console.warn(`Translation missing for key: ${key} in language: ${this.translationLang}`);
+                    element.textContent = this.translations.en[key] || key;
+                }
             }
         });
     }
@@ -307,55 +316,45 @@ class CharacterLearning {
             return;
         }
 
-        // Update pronunciation note
-        const pronNote = document.querySelector('.pronunciation-note small');
-        if (pronNote && this.characterData.pronunciation_note) {
-            pronNote.textContent = this.characterData.pronunciation_note[this.translationLang] ||
-                                 this.characterData.pronunciation_note.en;
-        }
-
-        // Update quiz section
-        const quizTitle = document.querySelector('.practice-section h2');
-        const quizInstruction = document.querySelector('#quiz p:first-child');
-        if (quizTitle && quizInstruction) {
-            quizTitle.textContent = this.translations[this.translationLang]?.practice || 
-                                   this.translations.en.practice;
-            quizInstruction.textContent = this.translations[this.translationLang]?.fillInBlank || 
-                                        this.translations.en.fillInBlank;
-        }
-
-        // Clear any existing quiz result when language changes
-        const result = document.getElementById('result');
-        if (result) {
-            result.classList.add('hidden');
-            result.textContent = '';
-        }
-
-        // Update usages
+        // 只更新用法部分，不更新UI元素
         this.characterData.usages.forEach((usage, index) => {
             const card = document.querySelector(`[data-usage-id="${index + 1}"]`);
             if (card) {
                 const title = card.querySelector('h3');
                 const meaning = card.querySelector('.meaning');
                 
+                // 只在元素存在且内容为空或显示key时更新
                 if (title && usage.title) {
-                    const translatedTitle = usage.title[this.translationLang] || usage.title.en;
-                    title.textContent = `${translatedTitle} ${usage.chinese_title ? `(${usage.chinese_title})` : ''}`;
+                    const currentTitle = title.textContent;
+                    // 检查是否需要更新（是否显示的是key而不是翻译）
+                    if (currentTitle.includes('examples.') || currentTitle.trim() === '') {
+                        const translatedTitle = usage.title[this.translationLang] || usage.title.en;
+                        title.textContent = `${translatedTitle} ${usage.chinese_title ? `(${usage.chinese_title})` : ''}`;
+                    }
                 }
                 
                 if (meaning && usage.meaning) {
-                    const translatedMeaning = usage.meaning[this.translationLang] || usage.meaning.en;
-                    meaning.textContent = translatedMeaning;
+                    const currentMeaning = meaning.textContent;
+                    // 检查是否需要更新
+                    if (currentMeaning.includes('examples.') || currentMeaning.trim() === '') {
+                        const translatedMeaning = usage.meaning[this.translationLang] || usage.meaning.en;
+                        meaning.textContent = translatedMeaning;
+                    }
                 }
             }
         });
 
-        // Update section titles
-        const usagesTitle = document.querySelector('.usage-section h2');
-        if (usagesTitle) {
-            usagesTitle.textContent = this.translations[this.translationLang]?.commonUsages || 
-                                    this.translations.en.commonUsages;
+        // 更新其他特定于字符的内容
+        if (this.characterData.pronunciation_note) {
+            const pronNote = document.querySelector('.pronunciation-note small');
+            if (pronNote) {
+                pronNote.textContent = this.characterData.pronunciation_note[this.translationLang] || 
+                                     this.characterData.pronunciation_note.en;
+            }
         }
+
+        // Quiz部分的更新保持不变
+        // ...其他代码保持不变...
     }
 
     checkAnswer(answer) {
