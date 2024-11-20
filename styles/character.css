@@ -314,28 +314,38 @@ option[value="ur"] {
     margin: 15px 0;
 }
 
-.ref-link {
+.reference-links .ref-link {
     display: inline-flex;
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    background: #f0f0f0;
-    border-radius: 20px;
+    background-color: #f0f0f0 !important;
+    border-radius: 20px !important;
     text-decoration: none;
     color: #444;
     transition: all 0.3s ease;
+    border: none;
 }
 
-.ref-link:hover {
-    background: #e0e0e0;
+.reference-links .ref-link:hover {
+    background-color: #e0e0e0 !important;
     transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.ref-link i {
+.reference-links .ref-link i {
     color: #666;
+    margin-right: 4px;
 }
 
-.separator {
+.reference-links .separator {
     color: #888;
     font-size: 18px;
+    padding: 0 5px;
+}
+
+/* Reset any conflicting styles */
+.ref-link, .ref-link:visited {
+    color: #444 !important;
+    text-decoration: none !important;
 } 

@@ -296,7 +296,7 @@
     "home": "ទំព័រដើម",
     "readAloud": "អានឮៗ",
     "strokeOrder": "ល្បាច់ស្រាវ",
-    "dictionary": "អានឮៗ"
+    "dictionary": "វចនានុក្រម"
   },
   "my": {
     "selectVoice": "အသံရွေးပါ",
@@ -309,7 +309,7 @@
     "home": "ပင်မ",
     "readAloud": "အသံထွက်ဖတ်ပါ",
     "strokeOrder": "အသံရွေးပါ",
-    "dictionary": "အသုံးများသောအသုံးပြုမှုများ"
+    "dictionary": "အဘိဓာန်"
   },
   "kk": {
     "selectVoice": "Дауысты таңдау",
@@ -322,7 +322,7 @@
     "home": "Басты бет",
     "readAloud": "Дауыстап оқу",
     "strokeOrder": "Әрекеттердің реті",
-    "dictionary": "Словарь"
+    "dictionary": "Сөздік"
   },
   "uz": {
     "selectVoice": "Ovozni tanlang",
@@ -335,7 +335,7 @@
     "home": "Bosh sahifa",
     "readAloud": "Ovoz chiqarib o'qish",
     "strokeOrder": "Ovozni tanlang",
-    "dictionary": "Sözlük"
+    "dictionary": "Lug'at"
   },
   "ta": {
     "selectVoice": "குரலைத் தேர்வுசெய்க",
@@ -348,7 +348,7 @@
     "home": "முகப்பு",
     "readAloud": "சத்தமாக வாசிக்கவும்",
     "strokeOrder": "புத்திரம் வரிசை",
-    "dictionary": "சத்தமாக வாசிக்கவும்"
+    "dictionary": "அகராதி"
   },
   "te": {
     "selectVoice": "స్వరాన్ని ఎంచుకోండి",
@@ -361,7 +361,7 @@
     "home": "హోమ్",
     "readAloud": "బిగ్గరగా చదవండి",
     "strokeOrder": "స్వరాన్ని ఎంచుకోండి",
-    "dictionary": "స్వరాన్ని ఎంచుకోండి"
+    "dictionary": "నిఘంటువు"
   },
   "el": {
     "selectVoice": "Επιλογή φωνής",
