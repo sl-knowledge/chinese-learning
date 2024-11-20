@@ -303,4 +303,39 @@ option[value="ur"] {
 
 .stroke-link i {
     color: #666;
+}
+
+/* Add styles for reference links */
+.reference-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.ref-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #f0f0f0;
+    border-radius: 20px;
+    text-decoration: none;
+    color: #444;
+    transition: all 0.3s ease;
+}
+
+.ref-link:hover {
+    background: #e0e0e0;
+    transform: translateY(-2px);
+}
+
+.ref-link i {
+    color: #666;
+}
+
+.separator {
+    color: #888;
+    font-size: 18px;
 } 

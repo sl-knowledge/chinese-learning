@@ -6,10 +6,22 @@
     <title>学习"{{character}}"字 - Learning Chinese Character {{character}}</title>
     <link rel="stylesheet" href="../styles/character.css">
     <script src="../scripts/character.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="character-section">
         <div class="big-char">{{character}}</div>
+        <div class="reference-links">
+            <a href="https://bishun.net/hanzi/{{unicode}}" target="_blank" class="ref-link">
+                <i class="fas fa-paint-brush"></i>
+                <span data-i18n="strokeOrder">Stroke Order</span>
+            </a>
+            <span class="separator">|</span>
+            <a href="https://www.zdic.net/hans/{{encoded_char}}" target="_blank" class="ref-link">
+                <i class="fas fa-book"></i>
+                <span data-i18n="dictionary">Dictionary</span>
+            </a>
+        </div>
         <div class="pronunciation-box">
             <div class="pinyin">
                 {{#each pronunciations}}
